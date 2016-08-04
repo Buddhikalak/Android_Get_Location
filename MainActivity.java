@@ -8,6 +8,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
+/*
+Create by Buddhika Lakshan
+GEEk
+
+*/
 //import com.google.android.gms.maps.OnMapReadyCallback;
 
 
@@ -22,12 +27,8 @@ public class MainActivity extends FragmentActivity {
 		GPSTracker mGPS = new GPSTracker(this);
 		if (mGPS.canGetLocation) {
 			mGPS.getLocation();
-			//.i("getLatitude", mGPS.getLatitude() + "");
-//
-			//Log.i("getLongitude", mGPS.getLongitude() + "");
-
 			Toast.makeText(getApplicationContext(),
-					mGPS.getLatitude()+"-&-"+mGPS.getLongitude(), 1).show();
+			GPS.getLatitude()+"-&-"+mGPS.getLongitude(), 1).show();
 
 			
 		//	googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map123)).getMap();
@@ -37,10 +38,8 @@ public class MainActivity extends FragmentActivity {
 			//googleMap.getUiSettings().setZoomGesturesEnabled(true);
 			
 		} else {
-			// text.setText("Unabletofind");
-			// System.out.println("Unable");
-			Toast.makeText(getApplicationContext(),
-					"Aul", 1).show();
+					Toast.makeText(getApplicationContext(),
+					"Error", 1).show();
 			Log.i("ERROR", "Unable");
 		}
 
@@ -55,9 +54,7 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+	
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
